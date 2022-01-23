@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_shade_1"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idPBLoading"
+        android:visibility="visible"
+        android:layout_centerInParent="true"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idRLHome"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:id="@+id/idIVBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/black_shade_1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City Name"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginTop="30dp"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:shadowColor="#000"
+            android:shadowDx = "-5"
+            android:shadowDy = "-5"
+            android:shadowRadius = "5"
+            android:id="@+id/idTVCityName"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/idLLEdt"
+            android:layout_below="@+id/idTVCityName"
+            android:weightSum="5"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/idTILCity"
+                android:layout_width="289dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter City Name"
+                android:padding="5dp"
+                android:textColorHint="@color/white"
+                android:shadowColor = "#000"
+                android:textStyle="bold"
+                android:shadowDx = "-5"
+                android:shadowDy = "-5"
+                android:shadowRadius = "5"
+                app:hintTextColor="@color/cardview_light_background">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idEdtCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textStyle="bold"
+                    android:shadowDx = "-5"
+                    android:shadowDy = "-5"
+                    android:shadowRadius = "5"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/idIVSearch"
+                    android:layout_width="62dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/cardview_light_background"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/idTVTemperature"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idLLEdt"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_rounded"
+            android:padding="2dp"
+            android:text="23"
+            android:textStyle="bold"
+            android:textColor="@color/cardview_light_background"
+            android:shadowColor = "#000"
+            android:shadowDx = "-5"
+            android:shadowDy = "-5"
+            android:shadowRadius = "5"
+            android:textSize="60dp" />
+
+        <ImageView
+            android:id="@+id/idIVIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/idTVTemperature"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/clipart2690182" />
+        <TextView
+            android:id="@+id/idTVCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idIVIcon"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Condition"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:shadowColor = "#000"
+            android:shadowDx = "-5"
+            android:shadowDy = "-5"
+            android:shadowRadius = "5"
+            android:textColor="@color/cardview_light_background" />
+        <TextView
+            android:id="@+id/daily_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="18dp"
+            android:text="Daily Forecast"
+            android:textColor="@color/cardview_light_background"
+            android:shadowColor = "#000"
+            android:shadowDx = "-5"
+            android:shadowDy = "-5"
+            android:shadowRadius = "5"
+            android:textStyle="bold"
+            android:layout_below="@+id/idTVCondition"
+            />
+        <ScrollView
+            android:id="@+id/scrollable"
+            android:layout_centerInParent="true"
+            android:layout_width="325dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/daily_text"
+            android:layout_marginLeft="5dp"
+        >
+        <TableLayout
+            android:id="@+id/tableId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TableRow
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/textId1"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="gravity"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/cardview_light_background"
+                    />
+                    <ImageView
+                        android:id="@+id/daily_img1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/clipart2690182"
+                    />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/textId2"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="gravity"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/cardview_light_background"
+                    />
+                    <ImageView
+                        android:id="@+id/daily_img2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/clipart2690182"
+                    />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/textId3"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="gravity"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/cardview_light_background"
+                    />
+                    <ImageView
+                        android:id="@+id/daily_img3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/clipart2690182"
+                        />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/textId4"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="gravity"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/cardview_light_background"
+                        />
+                    <ImageView
+                        android:id="@+id/daily_img4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/clipart2690182"
+                        />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/textId5"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="gravity"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/cardview_light_background"
+                        />
+                    <ImageView
+                        android:id="@+id/daily_img5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/clipart2690182"
+                        />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/textId6"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="gravity"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/cardview_light_background"
+                        />
+                    <ImageView
+                        android:id="@+id/daily_img6"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/clipart2690182"
+                        />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                android:textColor="@color/cardview_light_background"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/textId7"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="gravity"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="25dp"
+                        android:textColor="@color/cardview_light_background"
+                        />
+                    <ImageView
+                        android:id="@+id/daily_img7"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/clipart2690182"
+                        />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="18dp"
+            android:text="Hourly Forecast"
+            android:textColor="@color/cardview_light_background"
+            android:layout_above="@id/idRVWeather"
+            android:shadowColor = "#000"
+            android:shadowDx = "-5"
+            android:shadowDy = "-5"
+            android:shadowRadius = "5"
+            android:textStyle="bold"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/idRVWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+    </RelativeLayout>
+</RelativeLayout>
